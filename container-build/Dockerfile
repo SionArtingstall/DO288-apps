@@ -16,7 +16,7 @@ RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf
 
 # Changing folder permissions to allow to run on OpenShift
 RUN chgrp -R 0 /var/log/httpd /var/run/httpd && \
-    chmod -r g=u /var/log/httpd /var/run/httpd
+    chmod -R g=u /var/log/httpd /var/run/httpd
 
 # Run as non privileged user
 USER 1001
